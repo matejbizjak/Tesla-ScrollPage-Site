@@ -9,35 +9,29 @@
     <title>Title</title>
 </head>
 <body>
-<!--<ul id="myMenu">-->
-<!--<li data-menuanchor="firstPage" class="active"><a href="#firstPage">First section</a></li>-->
-<!--<li data-menuanchor="secondPage"><a href="#secondPage">Second section</a></li>-->
-<!--<li data-menuanchor="thirdPage"><a href="#thirdPage">Third section</a></li>-->
-<!--<li data-menuanchor="fourthPage"><a href="#fourthPage">Fourth section</a></li>-->
-<!--</ul>-->
 
 <div style="width: 40%">
     <div id="navbar" class="">
-        <a class="column" href="#s">
+        <a class="column" href="#sAnc">
             <img src="images/tesla/logo.png" style="width: 60px; height: 100%; margin: 1%;">
         </a>
-        <a class="column" href="#s">
+        <a class="column" href="#sAnc">
             <img src="images/tesla/text/s.png" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
-        <a class="column" href="#x">
+        <a class="column" href="#xAnc">
             <img src="images/tesla/text/x.png" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
-        <a class="column" href="#3">
+        <a class="column" href="#3Anc">
             <img src="images/tesla/text/3.png" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
-        <a class="column" href="#roadster">
+        <a class="column" href="#roadsterAnc">
             <img src="images/tesla/text/roadster.png" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
     </div>
 </div>
 
 <div id="fullpage">
-    <div class="section" id="s" data-anchor="s">
+    <div class="section" id data-anchor="sAnc">
         <div class="slide">
             <img src="images/tesla/offical/s1.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
@@ -57,7 +51,7 @@
             <img src="images/tesla/offical/s6.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
     </div>
-    <div class="section" id="x" data-anchor="x">
+    <div class="section" id="x" data-anchor="xAnc">
         <div class="slide">
             <img src="images/tesla/offical/x1.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
@@ -71,7 +65,7 @@
             <img src="images/tesla/offical/x4.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
     </div>
-    <div class="section" id="3" data-anchor="3">
+    <div class="section" id="3" data-anchor="3Anc">
         <div class="slide">
             <img src="images/tesla/offical/31.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
@@ -85,7 +79,7 @@
             <img src="images/tesla/offical/34.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
     </div>
-    <div class="section" id="roadster" data-anchor="roadster">
+    <div class="section" id="roadster" data-anchor="roadsterAnc">
         <div class="slide">
             <img src="images/tesla/offical/roadster2.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
@@ -104,32 +98,11 @@
     </div>
 </div>
 
-
-<!--<div id="fullpage">-->
-<!--<div class="section" id="page1">-->
-<!--<img src="images/mercedes/a1.jpg"/>-->
-<!--</div>-->
-<!--<div class="section">-->
-<!--<div class="slide" id="page2">-->
-<!--<img src="images/mercedes/b1.jpg"/>-->
-<!--</div>-->
-<!--<div class="slide">-->
-<!--<img src="images/3.jpg"/>-->
-<!--</div>-->
-<!--<div class="slide">-->
-<!--<img src="images/4.jpg"/>-->
-<!--</div>-->
-<!--</div>-->
-<!--<div class="section" id="page3">-->
-<!--<img src="images/mercedes/c1.jpg"/>-->
-<!--</div>-->
-<!--</div>-->
 <script>
     $("#fullpage").fullpage({
-        anchors: ['s', 'x', '3', 'roadster'],
+        anchors: ['sAnc', 'xAnc', '3Anc', 'roadsterAnc'],
         menu: "#myMenu",
-        scrollHorizontally: true,
-        slidesNavigation: false
+        scrollHorizontally: true
     });
 </script>
 </body>
