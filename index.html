@@ -105,39 +105,18 @@
     $("#fullpage").fullpage({
         anchors: ['sAnc', 'xAnc', '3Anc', 'roadsterAnc'],
         menu: "#myMenu",
-        // navigation: true
 
         onLeave: function (index, nextIndex, direction) {
-            const leavingSection = $(this);
-
             const idji = [null, "textS", "textX", "text3", "textRoadster"];
             const imena = [null, "images/tesla/text/s.png", "images/tesla/text/x.png", "images/tesla/text/3.png",
                 "images/tesla/text/roadster.png"];
             const imenaSel = [null, "images/tesla/text/s_sel.png", "images/tesla/text/x_sel.png",
                 "images/tesla/text/3_sel.png", "images/tesla/text/roadster_sel.png"];
 
-            // //after leaving section 2
-            // if(index === 2 && direction === 'down'){
-            //     alert("Going to section 3!");
-            // }
-            //
-            // else if(index === 2 && direction === 'up'){
-            //     alert("Going to section 1!");
-            // }
-
             $("#" + idji[index]).attr("src", imena[index]);
             $("#" + idji[nextIndex]).attr("src", imenaSel[nextIndex]);
-
-            console.log(idji[index] + "  " + imena[index]);
-            console.log(idji[nextIndex] + "  " + imenaSel[nextIndex]);
-
-            // if (nextIndex === 1) {
-            //     $("#textS").attr("src", "images/tesla/text/s_sel.png")
-            // }
-            // alert(nextIndex);
         }
     });
-
 </script>
 </body>
 </html>
