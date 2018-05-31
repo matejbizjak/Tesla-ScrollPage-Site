@@ -5,6 +5,7 @@
     <script src="jquery.fullPage.js"></script>
     <link rel="stylesheet" href="jquery.fullPage.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
@@ -13,19 +14,20 @@
 <div style="width: 40%">
     <div id="navbar" class="">
         <a class="column" href="#sAnc">
-            <img src="images/tesla/logo.png" style="width: 60px; height: 100%; margin: 1%;">
+            <img src="images/tesla/logo.png" id="logo" style="width: 60px; height: 100%; margin: 1%;">
         </a>
         <a class="column" href="#sAnc">
-            <img src="images/tesla/text/s.png" style="width: 130px; height: 85%; margin-top: 20px;">
+            <img src="images/tesla/text/s_sel.png" id="textS" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
         <a class="column" href="#xAnc">
-            <img src="images/tesla/text/x.png" style="width: 130px; height: 85%; margin-top: 20px;">
+            <img src="images/tesla/text/x.png" id="textX" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
         <a class="column" href="#3Anc">
-            <img src="images/tesla/text/3.png" style="width: 130px; height: 85%; margin-top: 20px;">
+            <img src="images/tesla/text/3.png" id="text3" style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
         <a class="column" href="#roadsterAnc">
-            <img src="images/tesla/text/roadster.png" style="width: 130px; height: 85%; margin-top: 20px;">
+            <img src="images/tesla/text/roadster.png" id="textRoadster"
+                 style="width: 130px; height: 85%; margin-top: 20px;">
         </a>
     </div>
 </div>
@@ -33,6 +35,7 @@
 <div id="fullpage">
     <div class="section" id data-anchor="sAnc">
         <div class="slide">
+            <!--<h4 class="text">Tesla Model S</h4>-->
             <img src="images/tesla/offical/s1.jpg" style="height: 100%; width: 100%; object-fit: cover">
         </div>
         <div class="slide">
@@ -103,8 +106,38 @@
         anchors: ['sAnc', 'xAnc', '3Anc', 'roadsterAnc'],
         menu: "#myMenu",
         // navigation: true
-        // showActiveTooltip: true
+
+        onLeave: function (index, nextIndex, direction) {
+            const leavingSection = $(this);
+
+            const idji = [null, "textS", "textX", "text3", "textRoadster"];
+            const imena = [null, "images/tesla/text/s.png", "images/tesla/text/x.png", "images/tesla/text/3.png",
+                "images/tesla/text/roadster.png"];
+            const imenaSel = [null, "images/tesla/text/s_sel.png", "images/tesla/text/x_sel.png",
+                "images/tesla/text/3_sel.png", "images/tesla/text/roadster_sel.png"];
+
+            // //after leaving section 2
+            // if(index === 2 && direction === 'down'){
+            //     alert("Going to section 3!");
+            // }
+            //
+            // else if(index === 2 && direction === 'up'){
+            //     alert("Going to section 1!");
+            // }
+
+            $("#" + idji[index]).attr("src", imena[index]);
+            $("#" + idji[nextIndex]).attr("src", imenaSel[nextIndex]);
+
+            console.log(idji[index] + "  " + imena[index]);
+            console.log(idji[nextIndex] + "  " + imenaSel[nextIndex]);
+
+            // if (nextIndex === 1) {
+            //     $("#textS").attr("src", "images/tesla/text/s_sel.png")
+            // }
+            // alert(nextIndex);
+        }
     });
+
 </script>
 </body>
 </html>
